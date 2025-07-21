@@ -184,7 +184,7 @@ if submitted:
 
             # Show prediction in a styled card
             st.markdown(
-                f'<div class="prediction-card">Predicted Salary: <span style="font-size:32px; color:#16a34a;">₹{predicted_salary:,.2f}</span><br><span style="font-size:28px;">🥳</span></div>',
+                f'<div class="prediction-card">Predicted Salary: <span style="font-size:32px; color:#16a34a;">${predicted_salary:,.2f}</span><br><span style="font-size:28px;">🥳</span></div>',
                 unsafe_allow_html=True
             )
 
@@ -204,7 +204,7 @@ if submitted:
             # Display potential salary range based on experience
             min_salary = predicted_salary * 0.8  # 20% less
             max_salary = predicted_salary * 1.2  # 20% more
-            st.markdown(f"### Potential Salary Range: ₹{min_salary:,.2f} - ₹{max_salary:,.2f}")
+            st.markdown(f"### Potential Salary Range: ${min_salary:,.2f} - ${max_salary:,.2f}")
 
             # Allow users to download their input data and prediction
             input_data['Predicted_Salary'] = predicted_salary
