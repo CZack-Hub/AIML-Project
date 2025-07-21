@@ -141,7 +141,7 @@ if submitted:
                 st.markdown(f"""
                 <div class="salary-card">
                     <h2 style="color: #2d3748; text-align: center;">Your Salary Prediction</h2>
-                    <h1 style="color: #2b6cb0; text-align: center;">₹{predicted_salary:,.2f}</h1>
+                    <h1 style="color: #2b6cb0; text-align: center;">${predicted_salary:,.2f}</h1>
                     <p style="text-align: center; color: #4a5568;">Estimated range: ₹{salary_min:,.2f} - ₹{salary_max:,.2f}</p>
                 </div>
                 """, unsafe_allow_html=True)
@@ -156,7 +156,7 @@ if submitted:
                 })
                 
                 fig = px.bar(comparison_df, x='Metric', y='Value', color='Metric',
-                            labels={'Value': 'Salary (₹)'}, height=400)
+                            labels={'Value': 'Salary ($)'}, height=400)
                 st.plotly_chart(fig, use_container_width=True)
                 
                 # Visualization - Salary Components
@@ -172,7 +172,7 @@ if submitted:
                 
                 # Download report
                 input_data['Predicted Salary'] = predicted_salary
-                input_data['Confidence Range'] = f"₹{salary_min:,.2f} - ₹{salary_max:,.2f}"
+                input_data['Confidence Range'] = f"${salary_min:,.2f} - ${salary_max:,.2f}"
                 csv = input_data.to_csv(index=False)
                 st.download_button(
                     label="📄 Download Detailed Report",
