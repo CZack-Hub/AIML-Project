@@ -102,7 +102,7 @@ if submitted:
         # Make prediction using the loaded pipeline
         predicted_salary = model_pipeline.predict(input_data)[0]
 
-        st.success(f"### Predicted Salary: ₹{predicted_salary:,.2f}")
+        st.success(f"### Predicted Salary: ${predicted_salary:,.2f}")
         st.balloons() # A little celebratory animation!
 
     except Exception as e:
